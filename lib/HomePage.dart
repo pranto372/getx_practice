@@ -17,29 +17,23 @@ class HomePage extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
           ),
           onPressed: (){
-            Get.defaultDialog(
-              title: "Delete Alert!",
-              titlePadding: const EdgeInsets.all(10),
-              titleStyle: const TextStyle(color: Colors.white),
-              middleText: "Once delete, you can't get it back",
-              middleTextStyle: const TextStyle(color: Colors.white),
-              backgroundColor: Colors.redAccent,
-              radius: 4,
-              textConfirm: "Confirm",
-              confirmTextColor: Colors.white,
-              textCancel: "Not Now",
-              cancelTextColor: Colors.white,
-              onCancel: () => {Get.back(closeOverlays: true)},
-              onConfirm: () => {Get.back(closeOverlays: true)},
-              barrierDismissible: false,
-              content: const Column(
-                children: [
-                  Text("Pranto Deb", style: TextStyle(color: Colors.white),),
-                  Text("Jibon Deb", style: TextStyle(color: Colors.white),),
-                  Text("Joy Deb", style: TextStyle(color: Colors.white),),
-                  Text("Amit Deb", style: TextStyle(color: Colors.white),),
-                ],
-              )
+            Get.bottomSheet(
+              Container(
+                height: 100,
+                width: double.infinity,
+                color: Colors.greenAccent,
+                child: Column(
+                  children: [
+                    Text("Pranto"),
+                    Text("Pranto"),
+                    Text("Pranto"),
+                    ElevatedButton(onPressed: ()=>{Get.back(closeOverlays: true)}, child: Text("Close"))
+                  ],
+                ),
+              ),
+              enableDrag: true,
+              isDismissible: false,
+              barrierColor: Colors.redAccent[1],
             );
           },
           child: const Text("Click Me", style: TextStyle(color: Colors.white),),),
