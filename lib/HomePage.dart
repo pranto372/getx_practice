@@ -18,9 +18,7 @@ class HomePage extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
           ),
           onPressed: (){
-            Get.to(SecondPage());
-
-            /// Get.off(SecondPage());
+            Get.toNamed("/product");
           },
           child: const Text("Click Me", style: TextStyle(color: Colors.white),),),
       ),

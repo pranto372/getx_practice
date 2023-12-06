@@ -18,7 +18,7 @@ class SecondPage extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
           ),
           onPressed: (){
-            Get.offAll(HomePage());
+            Get.offAllNamed("/");
           },
           child: const Text("Click Me", style: TextStyle(color: Colors.white),),),
       ),
