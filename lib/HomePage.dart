@@ -17,19 +17,29 @@ class HomePage extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
           ),
           onPressed: (){
-            Get.snackbar(
-              "Hi", "Hello GetX",
-              snackPosition: SnackPosition.BOTTOM,
-              showProgressIndicator: true,
-              backgroundColor: Colors.blueGrey,
-              colorText: Colors.white,
-              borderRadius: 5,
-              margin: const EdgeInsets.all(5),
-              padding: const EdgeInsets.all(2),
-              icon: const Icon(Icons.exit_to_app, color: Colors.white,),
-              isDismissible: false,
-              duration: const Duration(seconds: 1),
-              animationDuration: const Duration(milliseconds: 1000),
+            Get.defaultDialog(
+              title: "Delete Alert!",
+              titlePadding: const EdgeInsets.all(10),
+              titleStyle: const TextStyle(color: Colors.white),
+              middleText: "Once delete, you can't get it back",
+              middleTextStyle: const TextStyle(color: Colors.white),
+              backgroundColor: Colors.redAccent,
+              radius: 4,
+              textConfirm: "Confirm",
+              confirmTextColor: Colors.white,
+              textCancel: "Not Now",
+              cancelTextColor: Colors.white,
+              onCancel: () => {Get.back(closeOverlays: true)},
+              onConfirm: () => {Get.back(closeOverlays: true)},
+              barrierDismissible: false,
+              content: const Column(
+                children: [
+                  Text("Pranto Deb", style: TextStyle(color: Colors.white),),
+                  Text("Jibon Deb", style: TextStyle(color: Colors.white),),
+                  Text("Joy Deb", style: TextStyle(color: Colors.white),),
+                  Text("Amit Deb", style: TextStyle(color: Colors.white),),
+                ],
+              )
             );
           },
           child: const Text("Click Me", style: TextStyle(color: Colors.white),),),
